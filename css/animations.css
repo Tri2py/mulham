@@ -1,0 +1,490 @@
+/* Animations for Mulham's Portfolio */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide In Left Animation */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide In Right Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Scale Up Animation */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Rotate In Animation */
+@keyframes rotateIn {
+  from {
+    transform: rotate(-10deg) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Blur In Animation */
+@keyframes blurIn {
+  from {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Staggered Animation Classes */
+.animate {
+  opacity: 0;
+}
+
+.animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Animation Types */
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-up {
+  animation-name: slideUp;
+}
+
+.slide-left {
+  animation-name: slideInLeft;
+}
+
+.slide-right {
+  animation-name: slideInRight;
+}
+
+.scale-up {
+  animation-name: scaleUp;
+}
+
+.rotate-in {
+  animation-name: rotateIn;
+}
+
+.blur-in {
+  animation-name: blurIn;
+}
+
+/* Parallax Effect */
+.parallax {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Cursor Effects */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(127, 90, 240, 0.3);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: exclusion;
+}
+
+.custom-cursor.active {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(127, 90, 240, 0.2);
+  border: 1px solid rgba(127, 90, 240, 0.5);
+}
+
+/* Page Transition */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  z-index: 9998;
+  transform: translateY(100%);
+  transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.page-transition.active {
+  transform: translateY(0);
+}
+
+.page-transition::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(127, 90, 240, 0.1), rgba(44, 182, 125, 0.1));
+  pointer-events: none;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+}
+
+/* Text Reveal Animation */
+.text-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-reveal span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.text-reveal.animated span {
+  transform: translateY(0);
+}
+
+/* Image Reveal Animation */
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.image-reveal.animated::after {
+  transform: translateX(100%);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--highlight-color), var(--highlight-secondary));
+  z-index: 1000;
+  transition: width 0.1s;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.5);
+}
+
+/* Magnetic Effect */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Loading Animation */
+.loading-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-animation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(127, 90, 240, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.loading-animation.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(127, 90, 240, 0.1);
+  border-top-color: var(--highlight-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.3);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Specific Element Animations */
+/* Navbar Links Animation */
+.nav-links a {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navLinkFadeIn 0.5s forwards;
+}
+
+.nav-links a:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.nav-links a:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.nav-links a:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.nav-links a:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.nav-links a:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.contact-btn {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navLinkFadeIn 0.5s forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes navLinkFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Animations */
+.hero h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero.animated h1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero p {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.hero.animated p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-image {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.hero.animated .hero-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-down {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+}
+
+.hero.animated .scroll-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Portfolio Item Animations */
+.portfolio-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.portfolio-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Award Item Animations */
+.award-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.award-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Portfolio Items */
+.portfolio-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.portfolio-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.portfolio-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.portfolio-item:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+/* Staggered Award Items */
+.award-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.award-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.award-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.award-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.award-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.award-item:nth-child(6) {
+  transition-delay: 0.6s;
+}
